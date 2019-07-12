@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.y1902.mapper.InformationMapper">
+    <resultMap id="infMapper" type="com.qf.y1902.vo.InformationVo">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="source" column="source"/>
+        <result property="author" column="author"/>
+        <result property="lastUpdateTime" column="last_update_time"/>
+        <result property="state" column="state"/>
+    </resultMap>
+    <sql id="find_sql">
+        id,
+        title,
+        source,
+        author,
+        state,
+        create_time
+    </sql>
+    <select id="selectAll" resultMap="infMapper">
+        select <include refid="find_sql"></include>
+        from article
+    </select>
+
+    <select id="finddraft" resultMap="infMapper">
+        select <include refid="find_sql"/>
+        from article
+       <!-- <where>
+            <if test="title != null and title != ''">
+                title like concat('%',#{title},'%')
+            </if>
+            <if test="lastTime != null and lastTime != ''">
+                and last_update_time &lt; #{lastTime}
+            </if>
+            <if test="initialTime !=null and initialTime != ''">
+                and last_update_time &gt; #{initialTime}
+            </if>
+        </where>-->
+    </select>
+    <select id="maxID" resultType="int">
+        select max(id) from article
+    </select>
+    <insert id="addIfm" parameterType="com.qf.y1902.vo.IfmAddVo">
+        insert into
+          article (id,title,source,summary,cover_pic,author,tags,allow_up,allow_fav,content,last_update_time)
+        values
+            (#{id},#{title},#{source},#{describe},#{image},#{author},#{lable},#{isAllow},#{isCollect},#{content},#{creatTime})
+    </insert>
+
+</mapper>

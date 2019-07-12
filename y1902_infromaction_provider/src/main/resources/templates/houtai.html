@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入easyui样式-->
+    <link rel="stylesheet" href="js/jquery-easyui-1.7.0/themes/material/easyui.css"/>
+    <!--引入easyui图标样式-->
+    <link rel="stylesheet"href="js/jquery-easyui-1.7.0/themes/icon.css"/>
+</head>
+<body class="easyui-layout">
+<div data-options="region:'north',split:true" style="height:100px;"><h2>“伴我汽车”管理平台</h2></div>
+<div data-options="region:'south',split:true" style="height:10px;"></div>
+<!--管理列表-->
+<div data-options="region:'west',split:true" style="width:260px;" collapsible="false">
+    <div id="aa" class="easyui-accordion" data-options="fit:true">
+        <div title="会员管理"  data-options="selected:true" style="overflow:auto;padding:10px;">
+            <ul id="tthy" class="easyui-tree">
+                <li data-options="attributes:{'url':'huiyuanGL'}">
+                    <span>会员管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="资讯管理" data-options="selected:true" style="padding:10px;">
+            <ul id="ttzx" class="easyui-tree">
+                <li data-options="attributes:{'url':'caogaoX'}">
+                    <span>草稿箱</span>
+                </li>
+                <li data-options="attributes:{'url':'zixunSH'}">
+                    <span>资讯审核</span>
+                </li>
+                <li data-options="attributes:{'url':'zixunFB'}">
+                    <span>资讯发布</span>
+                </li>
+                <li data-options="attributes:{'url':'zixunliebiao'}">
+                    <span>资讯列表</span>
+                </li>
+            </ul>
+        </div>
+        <div title="标签定义" data-options="selected:true">
+            <ul id="ttbiaoqiandingyi" class="easyui-tree">
+                <li data-options="attributes:{'url':'biaoqiandingyi'}">
+                    <span>标签定义</span>
+                </li>
+            </ul>
+        </div>
+        <div title="车型车库管理" data-options="selected:true">
+            <ul id="ttcheku" class="easyui-tree">
+                <li data-options="attributes:{'url':'pinpaigl'}">
+                    <span>品牌管理</span>
+                </li>
+                <li data-options="attributes:{'url':'changshanggl'}">
+                    <span>厂商管理</span>
+                </li>
+                <li data-options="attributes:{'url':'chexigl'}">
+                    <span>车系管理</span>
+                </li>
+                <li data-options="attributes:{'url':'chekuangl'}">
+                    <span>车款管理</span>
+                </li>
+                <li data-options="attributes:{'url':'canshufenleigl'}">
+                    <span>参数分类管理</span>
+                </li>
+                <li data-options="attributes:{'url':'canshugl'}">
+                    <span>参数管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="自有商品管理" data-options="selected:true">
+            <ul id="ttziyoushangpin" class="easyui-tree">
+                <li data-options="attributes:{'url':'ziyouspgl'}">
+                    <span>自有商品管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="活动管理" data-options="selected:true">
+            <ul id="tthuodonggl" class="easyui-tree">
+                <li data-options="attributes:{'url':'huodonglb'}">
+                    <span>活动列表</span>
+                </li>
+                <li data-options="attributes:{'url':'tuijianhd'}">
+                    <span>推荐活动</span>
+                </li>
+                <li data-options="attributes:{'url':'leixinggl'}">
+                    <span>类型管理</span>
+                </li>
+                <li data-options="attributes:{'url':'qudaogl'}">
+                    <span>渠道管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="消息管理" data-options="selected:true">
+            <ul id="ttxiaoxigl" class="easyui-tree">
+                <li data-options="attributes:{'url':'xiaoxigl'}">
+                    <span>消息管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="标签管理" data-options="selected:true">
+            <ul id="ttbiaoqiangl" class="easyui-tree">
+                <li data-options="attributes:{'url':'biaoqiangl'}">
+                    <span>标签管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="角色管理" data-options="selected:true">
+            <ul id="ttjsgl" class="easyui-tree">
+                <li data-options="attributes:{'url':'jsgl'}">
+                    <span>角色管理</span>
+                </li>
+            </ul>
+        </div>
+        <div title="管理员列表" data-options="selected:true">
+            <ul id="ttglylb" class="easyui-tree">
+                <li data-options="attributes:{'url':'glylb'}">
+                    <span>管理员列表</span>
+                </li>
+            </ul>
+        </div>
+        <div title="操作日志" data-options="selected:true">
+            <ul id="ttczrz" class="easyui-tree">
+                <li data-options="attributes:{'url':'czrz'}">
+                    <span>操作日志</span>
+                </li>
+            </ul>
+        </div>
+        <div title="个人中心" data-options="selected:true">
+            <ul id="ttgrzx" class="easyui-tree">
+                <li data-options="attributes:{'url':'grzx'}">
+                    <span>个人中心</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--展示区域-->
+<div data-options="region:'center'" style="padding:5px;background:#eee;">
+    <div id="tabs" class="easyui-tabs" data-options="fit:true">
+        <div title="会员管理" style="padding:20px;display:none;" href="/houtai/huiyuanGl">
+
+        </div>
+    </div>
+</div>
+<!--引入所依赖的js库-->
+<!----引入jquery类库---->
+<script src="js/jquery-easyui-1.7.0/jquery.min.js"></script>
+<!----引入easyui类库---->
+<script src="js/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+<!----引入easyui使用字符集---->
+<script src="js/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+<script>
+    $('.easyui-tree').tree({
+        onClick: function(node){
+            // 添加一个未选中状态的选项卡面板
+            var tabs=$("#tabs").tabs('getTab',node.text);
+            if (tabs!=null){
+                $("#tabs").tabs('select',node.text)
+            }else {
+                $('#tabs').tabs('add',{
+                    title: node.text,
+                    selected: true,
+                    closable:true,//可关闭
+                    href:node.attributes.url// 将树形节点的自定义资源地址设定为选项请求的资源地址
+                    //...
+                });
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>
